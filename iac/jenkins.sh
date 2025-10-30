@@ -37,42 +37,21 @@ sudo apt-get install trivy -y
 # Update system
 sudo apt-get install -y unzip curl
 
-# Download the latest AWS CLI v2 package
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-
-# Unzip the installer
-unzip awscliv2.zip
-
-# Run the installer
-sudo ./aws/install
-
-# Verify installation
-echo "AWS CLI version:"
-aws --version
-
-# Clean up
-rm -rf aws awscliv2.zip
-
-echo "AWS CLI v2 successfully installed!"
-
-# Install dependencies
-sudo apt-get install -y ca-certificates curl
-
-# Download the latest stable release
-KUBECTL_VERSION=$(curl -L -s https://dl.k8s.io/release/stable.txt)
-echo "Latest version: $KUBECTL_VERSION"
-
-# Download the kubectl binary
-curl -LO "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
+# Install Terraform
+sudo apt install wget -y
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
 
 # Install kubectl
+sudo apt update
+sudo apt install curl -y
+curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-
-# Verify installation
-echo "kubectl version:"
 kubectl version --client
 
-# Clean up
-rm kubectl
-
-echo "kubectl successfully installed!"
+# Install AWS CLI 
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt-get install unzip -y
+unzip awscliv2.zip
+sudo ./aws/install
