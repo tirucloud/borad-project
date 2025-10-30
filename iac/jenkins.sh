@@ -1,22 +1,24 @@
 #!/bin/bash
 # Jenkins installation script
-sudo apt-get update
-sudo apt-get install fontconfig openjdk-21-jre -y
+sudo apt update
+sudo apt install fontconfig openjdk-21-jre
 sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
-sudo apt-get update
-sudo apt-get install jenkins -y
+sudo apt update
+sudo apt install jenkins
+sudo apt update
+sudo apt install jenkins -y
 sudo systemctl enable jenkins
 
 sudo systemctl start jenkins
 sudo systemctl status jenkins
 
 #install docker
-sudo apt-get update
-sudo apt-get install docker.io -y
+sudo apt update
+sudo apt install docker.io -y
 sudo usermod -aG docker ubuntu  
 newgrp docker
 sudo chmod 777 /var/run/docker.sock
