@@ -53,21 +53,21 @@ This web application displays lists of board games and their reviews. While anyo
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
 
 ## PLUGINS TO BE INSTALLED INSIDE JENKINS
-1. Eclipse Temurin installer plugin
-2. Maven Integration plugin
-3. Sonar Quality Gates Plugin
-4. SonarQube Scanner for Jenkins
-5. Docker Pipeline, Docker plugin, docker-build-step, Docker Commons Plugin
-6. Kubernetes CLI Plugin, Kubernetes plugin
-7. AWS Credentials Plugin
-8. Email Extension Template Plugin
+1. Pipeline: Stage View Plugin
+2. Eclipse Temurin installer plugin
+3. Maven Integration plugin
+4. Sonar Quality Gates Plugin
+5. SonarQube Scanner for Jenkins
+6. Docker Pipeline
+7. Docker plugin
+8. AWS Credentials Plugin
+9. Email Extension Template Plugin
 
 ## Add bellow crdentials in jenkins
 1. mail	
 2. docker-cred (Username with password)	
 3. sonar-token (secret text)
-4. k8s (Secret file)
-5. aws-cred(AWS Credentials)
+4. aws-cred(AWS Credentials)
 
 ## Tools to be configured
 1. JDK installations - JDK - jdk17
@@ -86,3 +86,4 @@ This web application displays lists of board games and their reviews. While anyo
 * Click on Manage Jenkins–> credentials and add your mail username and generated password
 * This is to just verify the mail configuration
 * Now under the Extended E-mail Notification section configure the details. Click on Apply and save.
+
