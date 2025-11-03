@@ -48,8 +48,8 @@ This web application displays lists of board games and their reviews. While anyo
 2. Open the project in your IDE of choice
 3. Run the application
 4. To use initial user data, use the following credentials.
-  - username: bugs    |     password: bunny (user role)
-  - username: daffy   |     password: duck  (manager role)
+   - username: bugs    |     password: bunny (user role)
+   - username: daffy   |     password: duck  (manager role)
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
 
 ## PLUGINS TO BE INSTALLED INSIDE JENKINS
@@ -86,4 +86,5 @@ This web application displays lists of board games and their reviews. While anyo
 * Click on Manage Jenkins–> credentials and add your mail username and generated password
 * This is to just verify the mail configuration
 * Now under the Extended E-mail Notification section configure the details. Click on Apply and save.
+
 
