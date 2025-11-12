@@ -103,9 +103,9 @@ resource "aws_eks_node_group" "tiru" {
   subnet_ids      = aws_subnet.tiru_subnet[*].id
 
   scaling_config {
-    desired_size = 3
-    max_size     = 3
-    min_size     = 2
+    desired_size = 1
+    max_size     = 2
+    min_size     = 1
   }
 
   instance_types = ["t2.medium"]
