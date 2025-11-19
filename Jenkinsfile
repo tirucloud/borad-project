@@ -19,7 +19,7 @@ pipeline {
 
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/tirucloud/boardgame.git'
+                git branch: 'main', url: 'https://github.com/tirucloud/borad-project.git'
             }
         }
         stage("Maven build")
